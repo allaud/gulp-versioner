@@ -3,6 +3,27 @@ Gulp-versioner
 
 Gulp plugin for automatic versioning your scripts
 
+How it works
+=======
+
+Having `widget.backfill.js` file we want to store `unstable` file, file with version number etc.
+
+So, with config like this:
+
+    {
+      "default": {
+        "widget.backfill.js": [
+          "widget.backfill.%version%.js",
+          "widget.backfill.unstable.js"
+        ]
+      }
+    }
+
+The `gulp-versioner` will create two additional files: `widget.backfill.1.0.0.js` and `widget.backfill.unstable.js`
+
+You can also use different environments to deploy staging, production versions, etc.
+
+
 Config
 =======
 
