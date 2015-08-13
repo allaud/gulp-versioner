@@ -6,8 +6,8 @@ var fs      = require('fs');
 module.exports = function (options) {
   options = options || {};
 
-  var config  = require(__dirname + '/versions.json');
-  var package = require(__dirname + '/package.json');
+  var config  = require(process.cwd() + '/versions.json');
+  var package = require(process.cwd() + '/package.json');
   var current_config = config[options.env || 'default'];
 
   return through.obj(function (file, enc, cb) {
